@@ -34,30 +34,74 @@ $carousel_items = [
 <section id="hero" class="hero">
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
-            <?php foreach ($carousel_items as $index => $item): ?>
-                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>"
-                     style="background-image: url(<?= htmlspecialchars($item['image']) ?>);">
-                    <div class="info d-flex align-items-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 text-center">
-                                    <h2 data-aos="fade-down">
-                                        <?= htmlspecialchars($item['title']) ?>
-                                        <span><?= htmlspecialchars($item['subtitle']) ?></span>
-                                    </h2>
-                                    <p data-aos="fade-up"><?= htmlspecialchars($item['description']) ?></p>
-                                    <a data-aos="fade-up" data-aos-delay="200"
-                                       href="<?= htmlspecialchars($item['button_link']) ?>"
-                                       target="_blank"
-                                       class="btn-get-started">
-                                        <?= htmlspecialchars($item['button_text']) ?>
-                                    </a>
-                                </div>
+            <!-- First Carousel Item -->
+            <div class="carousel-item active" style="background-image: url(<?= htmlspecialchars($carousel_items[0]['image']) ?>);">
+                <div class="info d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <h2 data-aos="fade-down">
+                                    <?= htmlspecialchars($carousel_items[0]['title']) ?>
+                                    <span><?= htmlspecialchars($carousel_items[0]['subtitle']) ?></span>
+                                </h2>
+                                <p data-aos="fade-up"><?= htmlspecialchars($carousel_items[0]['description']) ?></p>
+                                <a data-aos="fade-up" data-aos-delay="200"
+                                   href="<?= htmlspecialchars($carousel_items[0]['button_link']) ?>"
+                                   target="_blank"
+                                   class="btn-get-started">
+                                    <?= htmlspecialchars($carousel_items[0]['button_text']) ?>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            </div>
+
+            <!-- Second Carousel Item -->
+            <div class="carousel-item" style="background-image: url(<?= htmlspecialchars($carousel_items[1]['image']) ?>);">
+                <div class="info d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <h2 data-aos="fade-down">
+                                    <?= htmlspecialchars($carousel_items[1]['title']) ?>
+                                    <span><?= htmlspecialchars($carousel_items[1]['subtitle']) ?></span>
+                                </h2>
+                                <p data-aos="fade-up"><?= htmlspecialchars($carousel_items[1]['description']) ?></p>
+                                <a data-aos="fade-up" data-aos-delay="200"
+                                   href="<?= htmlspecialchars($carousel_items[1]['button_link']) ?>"
+                                   target="_blank"
+                                   class="btn-get-started">
+                                    <?= htmlspecialchars($carousel_items[1]['button_text']) ?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Carousel Item -->
+            <div class="carousel-item" style="background-image: url(<?= htmlspecialchars($carousel_items[2]['image']) ?>);">
+                <div class="info d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <h2 data-aos="fade-down">
+                                    <?= htmlspecialchars($carousel_items[2]['title']) ?>
+                                    <span><?= htmlspecialchars($carousel_items[2]['subtitle']) ?></span>
+                                </h2>
+                                <p data-aos="fade-up"><?= htmlspecialchars($carousel_items[2]['description']) ?></p>
+                                <a data-aos="fade-up" data-aos-delay="200"
+                                   href="<?= htmlspecialchars($carousel_items[2]['button_link']) ?>"
+                                   target="_blank"
+                                   class="btn-get-started">
+                                    <?= htmlspecialchars($carousel_items[2]['button_text']) ?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Carousel Controls -->
