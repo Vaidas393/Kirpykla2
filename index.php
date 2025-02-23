@@ -3,37 +3,9 @@
 
 
 
-<?php
-// Example data that would typically come from a database or another dynamic source
-$slides = [
-    [
-        'image' => 'hero-carousel-1.jpg',
-        'title' => 'Kirpykla VIP Grožio Studija',
-        'description' => 'Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.',
-        'button_text' => 'Rezervuoti',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-    ],
-    [
-        'image' => 'hero-carousel-2.jpg',
-        'title' => 'Kirpykla VIP Grožio Studija',
-        'description' => 'Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.',
-        'button_text' => 'Rezervuoti',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-    ],
-    [
-        'image' => 'hero-carousel-5.jpg',
-        'title' => 'Kirpykla VIP Grožio Studija',
-        'description' => 'Visapusiška priežiūra vyrams ir moterims.',
-        'button_text' => 'Rezervuoti',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-    ]
-];
-?>
 
-<?php
-// Dynamic title for the carousel
-$title = "Kirpykla VIP Grožio Studija";
-?>
+
+
 <section id="hero" class="hero">
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
