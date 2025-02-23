@@ -33,3 +33,36 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+$(document).ready(function () {
+    // Fetch Bootstrap Icons
+    $.ajax({
+        url: "https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css",
+        success: function (css) {
+            let iconSelect = $("#icon-picker");
+            let matches = css.match(/\.bi-[a-z0-9-]+/g); // Find all Bootstrap icons
+
+            if (matches) {
+                matches.forEach(match => {
+                    let iconClass = match.replace(".", ""); // Remove the dot
+                    iconSelect.append(`<option value="${iconClass}">${iconClass.replace("bi-", "")}</option>`);
+                });
+
+                // Initialize Select2 with Icon Rendering
+                iconSelect.select2({
+                    templateResult: function (icon) {
+                        if (!icon.id) return icon.text; // Return text if no icon selected
+                        return $('<span><i class="bi ' + icon.id + '"></i> ' + icon.text + '</span>');
+                    },
+                    templateSelection: function (icon) {
+                        if (!icon.id) return icon.text; // Return text if no icon selected
+                        return $('<span><i class="bi ' + icon.id + '"></i> ' + icon.text + '</span>');
+                    }
+                });
+            }
+        },
+        error: function () {
+            console.error("Failed to load Bootstrap icons.");
+        }
+    });
+});

@@ -1,7 +1,7 @@
 <?php  include('structure/head.php') ?>
 <?php  include('structure/header.php') ?>
 
-<section id="hero" class="hero">
+  <section id="hero" class="hero">
 
    <?php
    $slides = mysqli_query($con, "SELECT * FROM hero_carousel ORDER BY id DESC");
@@ -48,6 +48,19 @@
   <main id="main">
 
     <!-- End Apie mus Section -->
+    <?php
+
+    // Fetch the service section description (only one row needed)
+    $section_query = "SELECT section_description FROM services WHERE section_description != '' LIMIT 1";
+    $section_result = mysqli_query($con, $section_query);
+    $section_data = mysqli_fetch_assoc($section_result);
+    $section_description = $section_data['section_description'] ?? "Mūsų Paslaugos";
+
+    // Fetch all services
+    $query = "SELECT * FROM services ORDER BY id DESC";
+    $services_result = mysqli_query($con, $query);
+    $services = mysqli_fetch_all($services_result, MYSQLI_ASSOC);
+    ?>
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
@@ -55,118 +68,32 @@
 
         <div class="section-header">
           <h2>Mūsų Paslaugos</h2>
-          <p>Teikiame platų kirpyklos paslaugų spektrą – nuo kirpimų ir skutimo iki plaukų priežiūros ir stiliaus konsultacijų.</p>
+          <p><?= htmlspecialchars($section_description) ?></p>
         </div>
 
         <div class="row gy-4">
 
-          <!-- Paslauga 1 -->
+          <?php foreach ($services as $service): ?>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative" style="background-image: url('assets/img/services/service-1.jpg'); background-size: cover; background-position: center;">
+            <div class="service-item position-relative" style="background-size: cover; background-position: center; background:">
               <div class="service-content">
                 <div class="icon">
-                  <i class="fa-solid fa-cut"></i>
+                  <i class="fa-solid <?= htmlspecialchars($service['icon']) ?>"></i>
                 </div>
-                <h3>Kirpimai vyrams ir moterims</h3>
+                <h3><?= htmlspecialchars($service['name']) ?></h3>
                 <ul>
-                  <li>Kirpimai pagal individualius poreikius</li>
-                  <li>Stilingi plaukų kirpimai</li>
-                  <li>Plaukų kirpimas su mašinėle</li>
+                    <?php
+                    $lines = explode("\n", $service['description']);
+                    foreach ($lines as $line): ?>
+                        <li><?= htmlspecialchars($line) ?></li>
+                    <?php endforeach; ?>
                 </ul>
-                <a href="kirpimas.php" class="readmore stretched-link">Plačiau <i class="bi bi-arrow-right"></i></a>
+                <!-- <a href="kirpimas.php" class="readmore stretched-link">Plačiau <i class="bi bi-arrow-right"></i></a> -->
               </div>
             </div>
           </div><!-- End Service Item -->
+        <?php endforeach; ?>
 
-          <!-- Paslauga 2 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative" style="background-image: url('assets/img/services/service-2.jpg'); background-size: cover; background-position: center;">
-              <div class="service-content">
-                <div class="icon">
-                  <i class="fa-solid fa-cut"></i>
-                </div>
-                <h3>Skutimas</h3>
-                <ul>
-                  <li>Tradicinis skutimas</li>
-                  <li>Skutimas karštuoju rankšluosčiu</li>
-                  <li>Vyrų skutimas su peiliu</li>
-                </ul>
-                <a href="kirpimas.php" class="readmore stretched-link">Plačiau <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Paslauga 3 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative" style="background-image: url('assets/img/services/service-3.jpg'); background-size: cover; background-position: center;">
-              <div class="service-content">
-                <div class="icon">
-                  <i class="fa-solid fa-spa"></i>
-                </div>
-                <h3>Plaukų priežiūra</h3>
-                <ul>
-                  <li>Plaukų drėkinimas ir maitinančios procedūros</li>
-                  <li>Plaukų stiprinimo ir regeneracijos paslaugos</li>
-                  <li>Plaukų atstatymo procedūros</li>
-                </ul>
-                <a href="kirpimas.php" class="readmore stretched-link">Plačiau <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Paslauga 4 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative" style="background-image: url('assets/img/services/service-4.jpg'); background-size: cover; background-position: center;">
-              <div class="service-content">
-                <div class="icon">
-                  <i class="fa-solid fa-cut"></i>
-                </div>
-                <h3>Barzdos priežiūra</h3>
-                <ul>
-                  <li>Barzdos kirpimas ir formavimas</li>
-                  <li>Barzdos valymas ir modeliavimas</li>
-                  <li>Barzdos stiprinimo ir maitinimo procedūros</li>
-                </ul>
-                <a href="kirpimas.php" class="readmore stretched-link">Plačiau <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Paslauga 5 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative" style="background-image: url('assets/img/services/service-5.jpg'); background-size: cover; background-position: center;">
-              <div class="service-content">
-                <div class="icon">
-                  <i class="fa-solid fa-hand-sparkles"></i>
-                </div>
-                <h3>Rankų ir nagų priežiūra</h3>
-                <ul>
-                  <li>Manikiūras ir pedikiūras</li>
-                  <li>Rankų ir nagų priežiūros procedūros</li>
-                  <li>Nagų lakavimas</li>
-                </ul>
-                <a href="kirpimas.php" class="readmore stretched-link">Plačiau <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Paslauga 6 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative" style="background-image: url('assets/img/services/service-6.jpg'); background-size: cover; background-position: center;">
-              <div class="service-content">
-                <div class="icon">
-                  <i class="fa-solid fa-tint"></i>
-                </div>
-                <h3>Plaukų dažymas</h3>
-                <ul>
-                  <li>Plaukų dažymas pagal individualius poreikius</li>
-                  <li>Dažymas natūraliais dažais</li>
-                  <li>Plaukų šviesinimas ir tonavimas</li>
-                </ul>
-                <a href="kirpimas.php" class="readmore stretched-link">Plačiau <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
 
         </div>
 

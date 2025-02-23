@@ -55,6 +55,18 @@
                         <a class="nav-link" href="heroSettings.php">Hero</a>
                     </nav>
                 </div>
+                <!-- Services -->
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#services" aria-expanded="false" aria-controls="services">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                    Services
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="services" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="serviceAdd.php">Add Service</a>
+                        <a class="nav-link" href="serviceView.php">View Services</a>
+                    </nav>
+                </div>
 
             </div>
         </div>
