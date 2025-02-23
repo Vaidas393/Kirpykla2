@@ -4,35 +4,89 @@
 
 
 <section id="hero" class="hero">
-  <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-          <div class="carousel-inner">
-              <!-- Hardcoded First Slide -->
-              <div class="carousel-item active" style="background-image: url('/uploads/1740332911_pexels-ollivves-1433052.jpg'); background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
-                  <div class="info d-flex align-items-center">
-                      <div class="container">
-                          <div class="row justify-content-center">
-                              <div class="col-lg-6 text-center">
-                                  <h2>
-                                      Kirpykla VIP Grožio Studija                                                                            <span>VIP Grožio Studija</span>
-                                                                      </h2>
-                                  <p>Visapusiška priežiūra vyrams ir moterims.</p>
-                                  <a href="https://app.simplymeet.me/vipstudija?is_widget=1&amp;view=compact" class="btn-get-started">
-                                      Rezervuoti                                </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
 
-          <!-- Carousel Controls -->
-          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-          </a>
-          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-              <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-          </a>
-      </div></section>
+   <!-- <div class="info d-flex align-items-center">
+     <div class="container">
+       <div class="row justify-content-center">
+         <div class="col-lg-6 text-center">
+           <h2 data-aos="fade-down">R.Rilskio <span>Statyba</span></h2>
+           <p data-aos="fade-up">Statybos, renovacijos darbai.</p>
+           <a data-aos="fade-up" data-aos-delay="200" href="apie.php" class="btn-get-started">Apie mus</a>
+         </div>
+       </div>
+     </div>
+   </div> -->
+
+   <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+     <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg)">
+       <div class="info d-flex align-items-center">
+         <div class="container">
+           <div class="row justify-content-center">
+             <div class="col-lg-6 text-center">
+               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
+               <p data-aos="fade-up">Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.</p>
+               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-2.jpg)">
+       <div class="info d-flex align-items-center">
+         <div class="container">
+           <div class="row justify-content-center">
+             <div class="col-lg-6 text-center">
+               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
+               <p data-aos="fade-up">Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.</p>
+               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
+       <div class="info d-flex align-items-center">
+         <div class="container">
+           <div class="row justify-content-center">
+             <div class="col-lg-6 text-center">
+               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
+               <p data-aos="fade-up">Visapusiška priežiūra vyrams ir moterims.</p>
+               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
+       <div class="info d-flex align-items-center">
+         <div class="container">
+           <div class="row justify-content-center">
+             <div class="col-lg-6 text-center">
+               <h2 data-aos="fade-down">R.Rilskio <span>Statyba</span></h2>
+               <p data-aos="fade-up">Statybos, renovacijos darbai.</p>
+               <a data-aos="fade-up" data-aos-delay="200" href="apie.php" class="btn-get-started">Apie mus</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div> -->
+
+     <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+     </a>
+
+     <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+       <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+     </a>
+
+   </div>
+
+ </section>
+ <!-- End Hero Section -->
 
 
   <!-- ======= Hero Section ======= -->
