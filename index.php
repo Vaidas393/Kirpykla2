@@ -1,41 +1,42 @@
 <?php  include('structure/head.php') ?>
 <?php  include('structure/header.php') ?>
 
-<section id="hero" class="hero">
-    <?php
-    // Fetch slides from database
-    $slidesQuery = mysqli_query($con, "SELECT * FROM hero_carousel ORDER BY id DESC");
-    $slides = mysqli_fetch_all($slidesQuery, MYSQLI_ASSOC);
-    ?>
+<?php
+// Assuming $slide contains the dynamic data for the carousel item
+$slide = [
+    'image' => '1740332911_pexels-ollivves-1433052.jpg', // Example dynamic image
+    'title' => 'Kirpykla VIP Grožio Studija',
+    'span_text' => 'VIP Grožio Studija',
+    'description' => 'Visapusiška priežiūra vyrams ir moterims.',
+    'button_text' => 'Rezervuoti',
+    'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact'
+];
+?>
 
+<section id="hero" class="hero">
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
-            <?php $isFirstSlide = true; ?>
-            <?php foreach ($slides as $slide): ?>
-                <div class="carousel-item <?= $isFirstSlide ? 'active' : '' ?>"
-                     style="background-image: url('/uploads/<?= htmlspecialchars($slide['image']) ?>');
-                            background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
-                    <div class="info d-flex align-items-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 text-center">
-                                    <h2>
-                                        <?= htmlspecialchars($slide['title']) ?>
-                                        <?php if (!empty($slide['span_text'])): ?>
-                                            <span><?= htmlspecialchars($slide['span_text']) ?></span>
-                                        <?php endif; ?>
-                                    </h2>
-                                    <p><?= htmlspecialchars($slide['description']) ?></p>
-                                    <a href="<?= htmlspecialchars($slide['button_link']) ?>" class="btn-get-started">
-                                        <?= htmlspecialchars($slide['button_text']) ?>
-                                    </a>
-                                </div>
+            <!-- Hardcoded First Slide -->
+            <div class="carousel-item active" style="background-image: url('/uploads/<?= htmlspecialchars($slide['image']) ?>'); background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
+                <div class="info d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <h2>
+                                    <?= htmlspecialchars($slide['title']) ?>
+                                    <?php if (!empty($slide['span_text'])): ?>
+                                        <span><?= htmlspecialchars($slide['span_text']) ?></span>
+                                    <?php endif; ?>
+                                </h2>
+                                <p><?= htmlspecialchars($slide['description']) ?></p>
+                                <a href="<?= htmlspecialchars($slide['button_link']) ?>" class="btn-get-started">
+                                    <?= htmlspecialchars($slide['button_text']) ?>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php $isFirstSlide = false; ?>
-            <?php endforeach; ?>
+            </div>
         </div>
 
         <!-- Carousel Controls -->
@@ -47,6 +48,7 @@
         </a>
     </div>
 </section>
+
 
   <!-- ======= Hero Section ======= -->
   <!-- End Hero Section -->
