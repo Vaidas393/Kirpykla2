@@ -68,12 +68,6 @@ $carousel_items = [
 
     </div>
 </section>
-
-<?php include('structure/footer.php'); ?>
-
-
-
-
   <!-- ======= Hero Section ======= -->
   <!-- End Hero Section -->
 
