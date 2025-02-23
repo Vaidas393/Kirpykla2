@@ -19,7 +19,7 @@
        </div>
      </div>
    </div> -->
-
+<?php $title ="Kirpykla" ?>
    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
      <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg)">
@@ -27,7 +27,7 @@
          <div class="container">
            <div class="row justify-content-center">
              <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
+               <h2 data-aos="fade-down"><?php echo($title); ?> <span>VIP Grožio Studija</span></h2>
                <p data-aos="fade-up">Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.</p>
                <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
              </div>
