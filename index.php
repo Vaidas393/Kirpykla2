@@ -43,7 +43,7 @@ $title = "Kirpykla VIP Grožio Studija";
                         <div class="row justify-content-center">
                             <div class="col-lg-6 text-center">
                                 <!-- Dynamically injected title -->
-                                <h2 data-aos="fade-down"><?= htmlspecialchars($title); ?> <span>VIP Grožio Studija</span></h2>
+                                <h2 data-aos="fade-down"><?= echo($title); ?> <span>VIP Grožio Studija</span></h2>
                                 <p data-aos="fade-up">Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.</p>
                                 <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
                             </div>
