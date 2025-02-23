@@ -1,35 +1,48 @@
 <?php  include('structure/head.php') ?>
 <?php  include('structure/header.php') ?>
 
-<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-inner">
-            <!-- Hardcoded First Slide -->
-            <div class="carousel-item active" style="background-image: url('/uploads/1740332911_pexels-ollivves-1433052.jpg'); background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
-                <div class="info d-flex align-items-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6 text-center">
-                                <h2>
-                                    Kirpykla VIP Grožio Studija                                                                            <span>VIP Grožio Studija</span>
-                                                                    </h2>
-                                <p>Visapusiška priežiūra vyrams ir moterims.</p>
-                                <a href="https://app.simplymeet.me/vipstudija?is_widget=1&amp;view=compact" class="btn-get-started">
-                                    Rezervuoti                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<?php
+// Assuming $slide contains the dynamic data for the carousel item
+$slide = [
+    'image' => '1740332911_pexels-ollivves-1433052.jpg', // Example dynamic image
+    'title' => 'Kirpykla VIP Grožio Studija',
+    'span_text' => 'VIP Grožio Studija',
+    'description' => 'Visapusiška priežiūra vyrams ir moterims.',
+    'button_text' => 'Rezervuoti',
+    'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact'
+];
+?>
 
-        <!-- Carousel Controls -->
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-    </div>
+<section id="hero" class="hero">
+  <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+              <!-- Hardcoded First Slide -->
+              <div class="carousel-item active" style="background-image: url('/uploads/1740332911_pexels-ollivves-1433052.jpg'); background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
+                  <div class="info d-flex align-items-center">
+                      <div class="container">
+                          <div class="row justify-content-center">
+                              <div class="col-lg-6 text-center">
+                                  <h2>
+                                      Kirpykla VIP Grožio Studija                                                                            <span>VIP Grožio Studija</span>
+                                                                      </h2>
+                                  <p>Visapusiška priežiūra vyrams ir moterims.</p>
+                                  <a href="https://app.simplymeet.me/vipstudija?is_widget=1&amp;view=compact" class="btn-get-started">
+                                      Rezervuoti                                </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+          </a>
+          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+          </a>
+      </div></section>
 
 
   <!-- ======= Hero Section ======= -->
