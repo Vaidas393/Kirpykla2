@@ -1,33 +1,9 @@
 <?php  include('structure/head.php') ?>
 <?php  include('structure/header.php') ?>
 
-
-
-
-
-
 <section id="hero" class="hero">
 
-   <?php
-   // Hardcoded data for carousel items
-   $title1 = "Kirpykla";
-   $subtitle1 = "VIP Grožio Studija";
-   $description1 = "Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.";
-   $button_link1 = "https://app.simplymeet.me/vipstudija?is_widget=1&view=compact";
-   $button_text1 = "Rezervuoti";
-
-   $title2 = "Kirpykla";
-   $subtitle2 = "VIP Grožio Studija";
-   $description2 = "Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.";
-   $button_link2 = "https://app.simplymeet.me/vipstudija?is_widget=1&view=compact";
-   $button_text2 = "Rezervuoti";
-
-   $title3 = "Kirpykla";
-   $subtitle3 = "VIP Grožio Studija";
-   $description3 = "Visapusiška priežiūra vyrams ir moterims.";
-   $button_link3 = "https://app.simplymeet.me/vipstudija?is_widget=1&view=compact";
-   $button_text3 = "Rezervuoti";
-   ?>
+   <?php $title1 = "Kirpykla"; ?>  <!-- Dynamically setting title for the first carousel item -->
 
    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
@@ -37,9 +13,9 @@
                    <div class="container">
                        <div class="row justify-content-center">
                            <div class="col-lg-6 text-center">
-                               <h2 data-aos="fade-down"><?= htmlspecialchars($title1); ?> <span><?= htmlspecialchars($subtitle1); ?></span></h2>
-                               <p data-aos="fade-up"><?= htmlspecialchars($description1); ?></p>
-                               <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($button_link1); ?>" target="blank" class="btn-get-started"><?= htmlspecialchars($button_text1); ?></a>
+                               <h2 data-aos="fade-down"><?= htmlspecialchars($title1); ?> <span>VIP Grožio Studija</span></h2>
+                               <p data-aos="fade-up">Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.</p>
+                               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
                            </div>
                        </div>
                    </div>
@@ -51,9 +27,9 @@
                    <div class="container">
                        <div class="row justify-content-center">
                            <div class="col-lg-6 text-center">
-                               <h2 data-aos="fade-down"><?= htmlspecialchars($title2); ?> <span><?= htmlspecialchars($subtitle2); ?></span></h2>
-                               <p data-aos="fade-up"><?= htmlspecialchars($description2); ?></p>
-                               <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($button_link2); ?>" target="blank" class="btn-get-started"><?= htmlspecialchars($button_text2); ?></a>
+                               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
+                               <p data-aos="fade-up">Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.</p>
+                               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
                            </div>
                        </div>
                    </div>
@@ -65,9 +41,9 @@
                    <div class="container">
                        <div class="row justify-content-center">
                            <div class="col-lg-6 text-center">
-                               <h2 data-aos="fade-down"><?= htmlspecialchars($title3); ?> <span><?= htmlspecialchars($subtitle3); ?></span></h2>
-                               <p data-aos="fade-up"><?= htmlspecialchars($description3); ?></p>
-                               <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($button_link3); ?>" target="blank" class="btn-get-started"><?= htmlspecialchars($button_text3); ?></a>
+                               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
+                               <p data-aos="fade-up">Visapusiška priežiūra vyrams ir moterims.</p>
+                               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
                            </div>
                        </div>
                    </div>
@@ -81,13 +57,8 @@
            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
        </a>
 
-       <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-           <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-       </a>
+       <a class="carousel-control-next" href="#hero-carousel" role
 
-   </div>
-
-</section>
 
  <!-- End Hero Section -->
 
