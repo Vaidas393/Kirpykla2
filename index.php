@@ -13,7 +13,7 @@
             <?php $isFirstSlide = true; ?>
             <?php foreach ($slides as $slide): ?>
                 <div class="carousel-item <?= $isFirstSlide ? 'active' : '' ?>"
-                     style="background-image: url('/kirpykla2/uploads/<?= htmlspecialchars($slide['image']) ?>');
+                     style="background-image: url('/uploads/<?= htmlspecialchars($slide['image']) ?>');
                             background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
                     <div class="info d-flex align-items-center">
                         <div class="container">
