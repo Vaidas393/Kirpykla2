@@ -1,5 +1,7 @@
 <?php
-include('config/db.php');
+// Fetch site settings
+$result = mysqli_query($con, "SELECT * FROM site_settings LIMIT 1");
+$site_settings = mysqli_fetch_assoc($result);
 
 // Fetch only active categories
 $categories = mysqli_query($con, "SELECT * FROM categories WHERE status = 'active' ORDER BY name");
@@ -9,7 +11,16 @@ $categories = mysqli_query($con, "SELECT * FROM categories WHERE status = 'activ
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
     <a href="index.php" class="logo d-flex align-items-center">
-      <h1>VIP<span>.</span></h1>
+        <?php if (!empty($site_settings['logo']) && file_exists("uploads/" . $site_settings['logo'])): ?>
+            <img src="uploads/<?= htmlspecialchars($site_settings['logo']) ?>" alt="Logo">
+        <?php else: ?>
+            <h1>
+                <?= htmlspecialchars($site_settings['logo_text']) ?>
+                <?php if (!empty($site_settings['span_text'])): ?>
+                    <span><?= htmlspecialchars($site_settings['span_text']) ?></span>
+                <?php endif; ?>
+            </h1>
+        <?php endif; ?>
     </a>
 
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>

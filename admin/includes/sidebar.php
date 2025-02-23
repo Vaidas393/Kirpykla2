@@ -2,13 +2,14 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
+
                 <!-- Categories -->
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#categories" aria-expanded="false" aria-controls="categories">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Categories
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="categories" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <div class="collapse" id="categories" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="categoryAdd.php">Add Category</a>
                         <a class="nav-link" href="categoryView.php">View Categories</a>
@@ -21,9 +22,9 @@
                     Subcategories
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="subcategories" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                <div class="collapse" id="subcategories" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="subcategoryadd.php">Add Subcategory</a>
+                        <a class="nav-link" href="subcategoryAdd.php">Add Subcategory</a>
                         <a class="nav-link" href="subcategoryView.php">View Subcategories</a>
                     </nav>
                 </div>
@@ -34,12 +35,27 @@
                     Posts
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="posts" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+                <div class="collapse" id="posts" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="postAdd.php">Add Post</a>
                         <a class="nav-link" href="postView.php">View Posts</a>
                     </nav>
                 </div>
+
+                <!-- Site Settings -->
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                    Site Settings
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="siteSettings" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="headerSettings.php">Header</a>
+                        <a class="nav-link" href="footerSettings.php">Footer</a>
+                        <a class="nav-link" href="heroSettings.php">Hero</a>
+                    </nav>
+                </div>
+
             </div>
         </div>
     </nav>
