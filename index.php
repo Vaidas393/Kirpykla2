@@ -1,102 +1,57 @@
 <?php  include('structure/head.php') ?>
 <?php  include('structure/header.php') ?>
 
-<?php
-// Define the carousel items
-$carousel_items = [
-    [
-        'image' => 'assets/img/hero-carousel/hero-carousel-1.jpg',
-        'title' => 'Kirpykla',
-        'subtitle' => 'VIP Grožio Studija',
-        'description' => 'Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-        'button_text' => 'Rezervuoti'
-    ],
-    [
-        'image' => 'assets/img/hero-carousel/hero-carousel-2.jpg',
-        'title' => 'Kirpykla',
-        'subtitle' => 'VIP Grožio Studija',
-        'description' => 'Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-        'button_text' => 'Rezervuoti'
-    ],
-    [
-        'image' => 'assets/img/hero-carousel/hero-carousel-5.jpg',
-        'title' => 'Kirpykla',
-        'subtitle' => 'VIP Grožio Studija',
-        'description' => 'Visapusiška priežiūra vyrams ir moterims.',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-        'button_text' => 'Rezervuoti'
-    ]
-];
-?>
-
 <section id="hero" class="hero">
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
             <!-- First Carousel Item -->
-            <div class="carousel-item active" style="background-image: url(<?= htmlspecialchars($carousel_items[0]['image']) ?>);">
+            <div class="carousel-item active" style="background-image: url('assets/img/hero-carousel/hero-carousel-1.jpg');">
                 <div class="info d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6 text-center">
                                 <h2 data-aos="fade-down">
-                                    <?= htmlspecialchars($carousel_items[0]['title']) ?>
-                                    <span><?= htmlspecialchars($carousel_items[0]['subtitle']) ?></span>
+                                    <?php $title = "Kirpykla"; echo htmlspecialchars($title); ?> <!-- Only Title is Dynamic -->
+                                    <span>VIP Grožio Studija</span>
                                 </h2>
-                                <p data-aos="fade-up"><?= htmlspecialchars($carousel_items[0]['description']) ?></p>
-                                <a data-aos="fade-up" data-aos-delay="200"
-                                   href="<?= htmlspecialchars($carousel_items[0]['button_link']) ?>"
-                                   target="_blank"
-                                   class="btn-get-started">
-                                    <?= htmlspecialchars($carousel_items[0]['button_text']) ?>
-                                </a>
+                                <p data-aos="fade-up">Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.</p>
+                                <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="_blank" class="btn-get-started">Rezervuoti</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Second Carousel Item -->
-            <div class="carousel-item" style="background-image: url(<?= htmlspecialchars($carousel_items[1]['image']) ?>);">
+            <!-- Second Carousel Item (Static) -->
+            <div class="carousel-item" style="background-image: url('assets/img/hero-carousel/hero-carousel-2.jpg');">
                 <div class="info d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6 text-center">
                                 <h2 data-aos="fade-down">
-                                    <?= htmlspecialchars($carousel_items[1]['title']) ?>
-                                    <span><?= htmlspecialchars($carousel_items[1]['subtitle']) ?></span>
+                                    Kirpykla
+                                    <span>VIP Grožio Studija</span>
                                 </h2>
-                                <p data-aos="fade-up"><?= htmlspecialchars($carousel_items[1]['description']) ?></p>
-                                <a data-aos="fade-up" data-aos-delay="200"
-                                   href="<?= htmlspecialchars($carousel_items[1]['button_link']) ?>"
-                                   target="_blank"
-                                   class="btn-get-started">
-                                    <?= htmlspecialchars($carousel_items[1]['button_text']) ?>
-                                </a>
+                                <p data-aos="fade-up">Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.</p>
+                                <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="_blank" class="btn-get-started">Rezervuoti</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Third Carousel Item -->
-            <div class="carousel-item" style="background-image: url(<?= htmlspecialchars($carousel_items[2]['image']) ?>);">
+            <!-- Third Carousel Item (Static) -->
+            <div class="carousel-item" style="background-image: url('assets/img/hero-carousel/hero-carousel-5.jpg');">
                 <div class="info d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6 text-center">
                                 <h2 data-aos="fade-down">
-                                    <?= htmlspecialchars($carousel_items[2]['title']) ?>
-                                    <span><?= htmlspecialchars($carousel_items[2]['subtitle']) ?></span>
+                                    Kirpykla
+                                    <span>VIP Grožio Studija</span>
                                 </h2>
-                                <p data-aos="fade-up"><?= htmlspecialchars($carousel_items[2]['description']) ?></p>
-                                <a data-aos="fade-up" data-aos-delay="200"
-                                   href="<?= htmlspecialchars($carousel_items[2]['button_link']) ?>"
-                                   target="_blank"
-                                   class="btn-get-started">
-                                    <?= htmlspecialchars($carousel_items[2]['button_text']) ?>
-                                </a>
+                                <p data-aos="fade-up">Visapusiška priežiūra vyrams ir moterims.</p>
+                                <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="_blank" class="btn-get-started">Rezervuoti</a>
                             </div>
                         </div>
                     </div>
@@ -113,6 +68,7 @@ $carousel_items = [
         </a>
     </div>
 </section>
+
 
 
 
