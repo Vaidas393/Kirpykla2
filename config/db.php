@@ -6,7 +6,7 @@ session_start();
 $host = 'localhost'; // Change this to your database host
 $dbname = 'blog'; // Change this to your database name
 $username = 'root'; // Change this to your database username
-$password = 'KpiNH898G?n39344'; // Change this if your database has a password
+$password = ''; 
 
 // Create connection
 $con = mysqli_connect($host, $username, $password, $dbname);

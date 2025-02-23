@@ -3,102 +3,31 @@
 
 <section id="hero" class="hero">
 
-   <!-- <div class="info d-flex align-items-center">
-     <div class="container">
-       <div class="row justify-content-center">
-         <div class="col-lg-6 text-center">
-           <h2 data-aos="fade-down">R.Rilskio <span>Statyba</span></h2>
-           <p data-aos="fade-up">Statybos, renovacijos darbai.</p>
-           <a data-aos="fade-up" data-aos-delay="200" href="apie.php" class="btn-get-started">Apie mus</a>
-         </div>
-       </div>
-     </div>
-   </div> -->
    <?php
-   $carousel_items = [
-    [
-        'image' => 'assets/img/hero-carousel/hero-carousel-1.jpg',
-        'title' => 'Kirpykla',
-        'subtitle' => 'VIP Grožio Studija',
-        'description' => 'Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-        'button_text' => 'Rezervuoti'
-    ],
-    [
-        'image' => 'assets/img/hero-carousel/hero-carousel-2.jpg',
-        'title' => 'Kirpykla',
-        'subtitle' => 'VIP Grožio Studija',
-        'description' => 'Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-        'button_text' => 'Rezervuoti'
-    ],
-    [
-        'image' => 'assets/img/hero-carousel/hero-carousel-5.jpg',
-        'title' => 'Kirpykla',
-        'subtitle' => 'VIP Grožio Studija',
-        'description' => 'Visapusiška priežiūra vyrams ir moterims.',
-        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-        'button_text' => 'Rezervuoti'
-    ]
-];
-    ?>
+   $slides = mysqli_query($con, "SELECT * FROM hero_carousel ORDER BY id DESC");
+   if (!$slides) {
+       die("Query Failed: " . mysqli_error($con)); // Check if the query runs properly
+   }
+
+   ?>
    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+     <?php foreach ($slides as $index => $item): ?>
 
-     <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg)">
+     <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>" style="background-image: url(<?= 'uploads/'. htmlspecialchars($item['image']) ?>);">
        <div class="info d-flex align-items-center">
          <div class="container">
            <div class="row justify-content-center">
              <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
-               <p data-aos="fade-up">Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
+               <h2 data-aos="fade-down"><?= htmlspecialchars($item['title']) ?>  <span><?= htmlspecialchars($item['span_text']) ?></span></h2>
+               <p data-aos="fade-up"><?= htmlspecialchars($item['description']) ?></p>
+               <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($item['button_link']) ?>" target="blank" class="btn-get-started"><?= htmlspecialchars($item['button_text']) ?></a>
              </div>
            </div>
          </div>
        </div>
      </div>
+   <?php endforeach; ?>
 
-     <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-2.jpg)">
-       <div class="info d-flex align-items-center">
-         <div class="container">
-           <div class="row justify-content-center">
-             <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
-               <p data-aos="fade-up">Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
-       <div class="info d-flex align-items-center">
-         <div class="container">
-           <div class="row justify-content-center">
-             <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
-               <p data-aos="fade-up">Visapusiška priežiūra vyrams ir moterims.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <!-- <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
-       <div class="info d-flex align-items-center">
-         <div class="container">
-           <div class="row justify-content-center">
-             <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">R.Rilskio <span>Statyba</span></h2>
-               <p data-aos="fade-up">Statybos, renovacijos darbai.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="apie.php" class="btn-get-started">Apie mus</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div> -->
 
      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
@@ -112,10 +41,6 @@
 
  </section>
  <!-- End Hero Section -->
-
- <!-- End Hero Section -->
-
-
 
   <!-- ======= Hero Section ======= -->
   <!-- End Hero Section -->
