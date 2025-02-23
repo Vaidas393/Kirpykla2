@@ -8,77 +8,87 @@
 
 <section id="hero" class="hero">
 
-   <!-- <div class="info d-flex align-items-center">
-     <div class="container">
-       <div class="row justify-content-center">
-         <div class="col-lg-6 text-center">
-           <h2 data-aos="fade-down">R.Rilskio <span>Statyba</span></h2>
-           <p data-aos="fade-up">Statybos, renovacijos darbai.</p>
-           <a data-aos="fade-up" data-aos-delay="200" href="apie.php" class="btn-get-started">Apie mus</a>
-         </div>
-       </div>
-     </div>
-   </div> -->
    <?php
-   $carousel_items = [
-       [
-           'image' => 'assets/img/hero-carousel/hero-carousel-1.jpg',
-           'title' => 'Kirpykla',
-           'subtitle' => 'VIP Grožio Studija',
-           'description' => 'Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.',
-           'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-           'button_text' => 'Rezervuoti'
-       ],
-       [
-           'image' => 'assets/img/hero-carousel/hero-carousel-2.jpg',
-           'title' => 'Kirpykla',
-           'subtitle' => 'VIP Grožio Studija',
-           'description' => 'Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.',
-           'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-           'button_text' => 'Rezervuoti'
-       ],
-       [
-           'image' => 'assets/img/hero-carousel/hero-carousel-5.jpg',
-           'title' => 'Kirpykla',
-           'subtitle' => 'VIP Grožio Studija',
-           'description' => 'Visapusiška priežiūra vyrams ir moterims.',
-           'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
-           'button_text' => 'Rezervuoti'
-       ]
-   ];
+   // Hardcoded data for carousel items
+   $title1 = "Kirpykla";
+   $subtitle1 = "VIP Grožio Studija";
+   $description1 = "Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.";
+   $button_link1 = "https://app.simplymeet.me/vipstudija?is_widget=1&view=compact";
+   $button_text1 = "Rezervuoti";
+
+   $title2 = "Kirpykla";
+   $subtitle2 = "VIP Grožio Studija";
+   $description2 = "Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.";
+   $button_link2 = "https://app.simplymeet.me/vipstudija?is_widget=1&view=compact";
+   $button_text2 = "Rezervuoti";
+
+   $title3 = "Kirpykla";
+   $subtitle3 = "VIP Grožio Studija";
+   $description3 = "Visapusiška priežiūra vyrams ir moterims.";
+   $button_link3 = "https://app.simplymeet.me/vipstudija?is_widget=1&view=compact";
+   $button_text3 = "Rezervuoti";
    ?>
+
    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
-           <div class="carousel-inner">
-               <?php foreach ($carousel_items as $index => $item): ?>
-                   <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>" style="background-image: url(<?php echo htmlspecialchars($item['image']); ?>)">
-                       <div class="info d-flex align-items-center">
-                           <div class="container">
-                               <div class="row justify-content-center">
-                                   <div class="col-lg-6 text-center">
-                                       <h2 data-aos="fade-down"><?php echo htmlspecialchars($item['title']); ?> <span><?php echo htmlspecialchars($item['subtitle']); ?></span></h2>
-                                       <p data-aos="fade-up"><?php echo htmlspecialchars($item['description']); ?></p>
-                                       <a data-aos="fade-up" data-aos-delay="200" href="<?php echo htmlspecialchars($item['button_link']); ?>" target="blank" class="btn-get-started"><?php echo htmlspecialchars($item['button_text']); ?></a>
-                                   </div>
-                               </div>
+       <div class="carousel-inner">
+           <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg)">
+               <div class="info d-flex align-items-center">
+                   <div class="container">
+                       <div class="row justify-content-center">
+                           <div class="col-lg-6 text-center">
+                               <h2 data-aos="fade-down"><?= htmlspecialchars($title1); ?> <span><?= htmlspecialchars($subtitle1); ?></span></h2>
+                               <p data-aos="fade-up"><?= htmlspecialchars($description1); ?></p>
+                               <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($button_link1); ?>" target="blank" class="btn-get-started"><?= htmlspecialchars($button_text1); ?></a>
                            </div>
                        </div>
                    </div>
-               <?php endforeach; ?>
+               </div>
            </div>
 
-           <!-- Carousel Controls -->
-           <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-               <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-           </a>
+           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-2.jpg)">
+               <div class="info d-flex align-items-center">
+                   <div class="container">
+                       <div class="row justify-content-center">
+                           <div class="col-lg-6 text-center">
+                               <h2 data-aos="fade-down"><?= htmlspecialchars($title2); ?> <span><?= htmlspecialchars($subtitle2); ?></span></h2>
+                               <p data-aos="fade-up"><?= htmlspecialchars($description2); ?></p>
+                               <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($button_link2); ?>" target="blank" class="btn-get-started"><?= htmlspecialchars($button_text2); ?></a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
 
-           <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-               <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-           </a>
+           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
+               <div class="info d-flex align-items-center">
+                   <div class="container">
+                       <div class="row justify-content-center">
+                           <div class="col-lg-6 text-center">
+                               <h2 data-aos="fade-down"><?= htmlspecialchars($title3); ?> <span><?= htmlspecialchars($subtitle3); ?></span></h2>
+                               <p data-aos="fade-up"><?= htmlspecialchars($description3); ?></p>
+                               <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($button_link3); ?>" target="blank" class="btn-get-started"><?= htmlspecialchars($button_text3); ?></a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
 
        </div>
 
- </section>
+       <!-- Carousel Controls -->
+       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+           <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+       </a>
+
+       <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+           <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+       </a>
+
+   </div>
+
+</section>
+
  <!-- End Hero Section -->
 
 
