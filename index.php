@@ -1,37 +1,20 @@
 <?php  include('structure/head.php') ?>
 <?php  include('structure/header.php') ?>
 
-<?php
-// Assuming $slide contains the dynamic data for the carousel item
-$slide = [
-    'image' => '1740332911_pexels-ollivves-1433052.jpg', // Example dynamic image
-    'title' => 'Kirpykla VIP Grožio Studija',
-    'span_text' => 'VIP Grožio Studija',
-    'description' => 'Visapusiška priežiūra vyrams ir moterims.',
-    'button_text' => 'Rezervuoti',
-    'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact'
-];
-?>
-
-<section id="hero" class="hero">
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
             <!-- Hardcoded First Slide -->
-            <div class="carousel-item active" style="background-image: url('/uploads/<?= htmlspecialchars($slide['image']) ?>'); background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
+            <div class="carousel-item active" style="background-image: url('/uploads/1740332911_pexels-ollivves-1433052.jpg'); background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
                 <div class="info d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6 text-center">
                                 <h2>
-                                    <?= htmlspecialchars($slide['title']) ?>
-                                    <?php if (!empty($slide['span_text'])): ?>
-                                        <span><?= htmlspecialchars($slide['span_text']) ?></span>
-                                    <?php endif; ?>
-                                </h2>
-                                <p><?= htmlspecialchars($slide['description']) ?></p>
-                                <a href="<?= htmlspecialchars($slide['button_link']) ?>" class="btn-get-started">
-                                    <?= htmlspecialchars($slide['button_text']) ?>
-                                </a>
+                                    Kirpykla VIP Grožio Studija                                                                            <span>VIP Grožio Studija</span>
+                                                                    </h2>
+                                <p>Visapusiška priežiūra vyrams ir moterims.</p>
+                                <a href="https://app.simplymeet.me/vipstudija?is_widget=1&amp;view=compact" class="btn-get-started">
+                                    Rezervuoti                                </a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +30,6 @@ $slide = [
             <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
         </a>
     </div>
-</section>
 
 
   <!-- ======= Hero Section ======= -->
