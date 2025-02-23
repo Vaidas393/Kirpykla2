@@ -23,7 +23,7 @@
                 </a>
                 <div class="collapse" id="subcategories" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="subcategoryAdd.php">Add Subcategory</a>
+                        <a class="nav-link" href="subcategoryadd.php">Add Subcategory</a>
                         <a class="nav-link" href="subcategoryView.php">View Subcategories</a>
                     </nav>
                 </div>
