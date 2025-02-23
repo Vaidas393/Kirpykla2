@@ -1,17 +1,7 @@
 <?php  include('structure/head.php') ?>
 <?php  include('structure/header.php') ?>
 
-<?php
-// Assuming $slide contains the dynamic data for the carousel item
-$slide = [
-    'image' => '1740332911_pexels-ollivves-1433052.jpg', // Example dynamic image
-    'title' => 'Kirpykla VIP Grožio Studija',
-    'span_text' => 'VIP Grožio Studija',
-    'description' => 'Visapusiška priežiūra vyrams ir moterims.',
-    'button_text' => 'Rezervuoti',
-    'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact'
-];
-?>
+
 
 <section id="hero" class="hero">
   <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
