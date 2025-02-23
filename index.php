@@ -3,90 +3,72 @@
 
 
 
+<?php
+// Example data that would typically come from a database or another dynamic source
+$slides = [
+    [
+        'image' => 'hero-carousel-1.jpg',
+        'title' => 'Kirpykla VIP Grožio Studija',
+        'description' => 'Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.',
+        'button_text' => 'Rezervuoti',
+        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
+    ],
+    [
+        'image' => 'hero-carousel-2.jpg',
+        'title' => 'Kirpykla VIP Grožio Studija',
+        'description' => 'Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.',
+        'button_text' => 'Rezervuoti',
+        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
+    ],
+    [
+        'image' => 'hero-carousel-5.jpg',
+        'title' => 'Kirpykla VIP Grožio Studija',
+        'description' => 'Visapusiška priežiūra vyrams ir moterims.',
+        'button_text' => 'Rezervuoti',
+        'button_link' => 'https://app.simplymeet.me/vipstudija?is_widget=1&view=compact',
+    ]
+];
+?>
+
 <section id="hero" class="hero">
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+            <?php foreach ($slides as $index => $slide): ?>
+                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>"
+                     style="background-image: url('/kirpykla2/uploads/<?= htmlspecialchars($slide['image']) ?>');
+                            background-size: cover; background-position: center; min-height: 600px; opacity: 1;">
+                    <div class="info d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6 text-center">
+                                    <h2 data-aos="fade-down">
+                                        <?= htmlspecialchars($slide['title']) ?>
+                                    </h2>
+                                    <p data-aos="fade-up">
+                                        <?= htmlspecialchars($slide['description']) ?>
+                                    </p>
+                                    <a data-aos="fade-up" data-aos-delay="200" href="<?= htmlspecialchars($slide['button_link']) ?>" target="blank" class="btn-get-started">
+                                        <?= htmlspecialchars($slide['button_text']) ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
 
-   <!-- <div class="info d-flex align-items-center">
-     <div class="container">
-       <div class="row justify-content-center">
-         <div class="col-lg-6 text-center">
-           <h2 data-aos="fade-down">R.Rilskio <span>Statyba</span></h2>
-           <p data-aos="fade-up">Statybos, renovacijos darbai.</p>
-           <a data-aos="fade-up" data-aos-delay="200" href="apie.php" class="btn-get-started">Apie mus</a>
-         </div>
-       </div>
-     </div>
-   </div> -->
+        <!-- Carousel Controls -->
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
 
-   <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+    </div>
+</section>
 
-     <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg)">
-       <div class="info d-flex align-items-center">
-         <div class="container">
-           <div class="row justify-content-center">
-             <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
-               <p data-aos="fade-up">Profesionalūs kirpimai, skutimo ir stilizavimo paslaugos.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-2.jpg)">
-       <div class="info d-flex align-items-center">
-         <div class="container">
-           <div class="row justify-content-center">
-             <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
-               <p data-aos="fade-up">Madingos šukuosenos ir kruopštus plaukų priežiūros paslaugos.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
-       <div class="info d-flex align-items-center">
-         <div class="container">
-           <div class="row justify-content-center">
-             <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">Kirpykla <span>VIP Grožio Studija</span></h2>
-               <p data-aos="fade-up">Visapusiška priežiūra vyrams ir moterims.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="https://app.simplymeet.me/vipstudija?is_widget=1&view=compact" target="blank" class="btn-get-started">Rezervuoti</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-
-     <!-- <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg)">
-       <div class="info d-flex align-items-center">
-         <div class="container">
-           <div class="row justify-content-center">
-             <div class="col-lg-6 text-center">
-               <h2 data-aos="fade-down">R.Rilskio <span>Statyba</span></h2>
-               <p data-aos="fade-up">Statybos, renovacijos darbai.</p>
-               <a data-aos="fade-up" data-aos-delay="200" href="apie.php" class="btn-get-started">Apie mus</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div> -->
-
-     <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-     </a>
-
-     <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-       <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-     </a>
-
-   </div>
-
- </section>
- <!-- End Hero Section -->
 
 
   <!-- ======= Hero Section ======= -->
