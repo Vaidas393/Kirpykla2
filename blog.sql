@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2025 at 04:05 PM
+-- Generation Time: Feb 24, 2025 at 04:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -314,8 +314,8 @@ CREATE TABLE `project_media` (
 
 CREATE TABLE `project_section` (
   `id` int(11) NOT NULL,
-  `section_title` varchar(255) NOT NULL DEFAULT 'Our Projects',
-  `section_description` text NOT NULL DEFAULT 'Here you can showcase all your completed works and projects.',
+  `section_title` varchar(255) NOT NULL,
+  `section_description` text NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
