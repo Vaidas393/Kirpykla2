@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2025 at 04:08 PM
+-- Generation Time: Feb 24, 2025 at 04:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -422,8 +422,8 @@ INSERT INTO `team_members` (`id`, `name`, `role`, `description`, `image`, `faceb
 
 CREATE TABLE `team_section` (
   `id` int(11) NOT NULL,
-  `section_title` varchar(255) DEFAULT 'Mūsų Komanda',
-  `section_description` text DEFAULT 'VIP Grožio Studijoje dirba profesionalių grožio specialistų komanda, kuri užtikrina, kad kiekvienas klientas gautų geriausią paslaugą.',
+  `section_title` varchar(255) DEFAULT NULL,
+  `section_description` text DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -467,8 +467,8 @@ INSERT INTO `testimonials` (`id`, `name`, `designation`, `image`, `rating`, `con
 
 CREATE TABLE `testimonial_section` (
   `id` int(11) NOT NULL,
-  `section_title` varchar(255) NOT NULL DEFAULT 'Atsiliepimai',
-  `section_description` text NOT NULL DEFAULT 'Mūsų klientai vertina aukštą paslaugų kokybę, profesionalumą ir dėmesį detalėms. Štai keletas jų atsiliepimų.',
+  `section_title` varchar(255) NOT NULL,
+  `section_description` text NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
