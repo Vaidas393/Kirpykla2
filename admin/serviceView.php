@@ -1,23 +1,25 @@
 <?php
 include('../config/db.php');
 
-// Handle section description update
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_section_description'])) {
+// Handle section title & description update
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_section'])) {
+    $newTitle = trim($_POST['section_title']);
     $newDescription = trim($_POST['section_description']);
 
-    // Update section description for any service (only one should exist)
-    if (!empty($newDescription)) {
-        mysqli_query($con, "UPDATE services SET section_description = '$newDescription' WHERE section_description IS NOT NULL LIMIT 1");
+    // Update section title and description for services (assuming only one row stores these details)
+    if (!empty($newTitle) && !empty($newDescription)) {
+        mysqli_query($con, "UPDATE services SET section_title = '$newTitle', section_description = '$newDescription' WHERE section_title IS NOT NULL LIMIT 1");
     }
 }
 
+// Fetch the section title and description (assumes only one row holds these details)
+$sectionQuery = mysqli_query($con, "SELECT section_title, section_description FROM services WHERE section_title IS NOT NULL LIMIT 1");
+$sectionRow = mysqli_fetch_assoc($sectionQuery);
+$sectionTitle = $sectionRow ? $sectionRow['section_title'] : "Our Services";
+$sectionDescription = $sectionRow ? $sectionRow['section_description'] : "Teikiame platų kirpyklos paslaugų spektrą – nuo kirpimų ir skutimo iki plaukų priežiūros ir stiliaus konsultacijų.";
+
 // Fetch all services
 $services = mysqli_query($con, "SELECT * FROM services");
-
-// Fetch only the section description (should be only one row)
-$sectionQuery = mysqli_query($con, "SELECT section_description FROM services WHERE section_description IS NOT NULL LIMIT 1");
-$sectionRow = mysqli_fetch_assoc($sectionQuery);
-$sectionDescription = $sectionRow ? $sectionRow['section_description'] : "Teikiame platų kirpyklos paslaugų spektrą – nuo kirpimų ir skutimo iki plaukų priežiūros ir stiliaus konsultacijų.";
 
 include('includes/header.php');
 ?>
@@ -25,11 +27,15 @@ include('includes/header.php');
 <div class="container mt-4">
     <h2>Manage Services</h2>
 
-    <!-- Edit Section Description -->
+    <!-- Edit Section Title and Description -->
     <form method="POST" class="mb-3">
-        <label for="section_description" class="form-label"><strong>Section Description:</strong></label>
+        <label for="section_title" class="form-label"><strong>Section Title:</strong></label>
+        <input type="text" name="section_title" class="form-control" value="<?= htmlspecialchars($sectionTitle) ?>" required>
+
+        <label for="section_description" class="form-label mt-2"><strong>Section Description:</strong></label>
         <textarea name="section_description" class="form-control"><?= htmlspecialchars($sectionDescription) ?></textarea>
-        <button type="submit" name="update_section_description" class="btn btn-primary mt-2">Update Description</button>
+
+        <button type="submit" name="update_section" class="btn btn-primary mt-2">Update Section</button>
     </form>
 
     <table class="table table-bordered">

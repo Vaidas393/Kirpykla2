@@ -51,7 +51,8 @@
                 <div class="collapse" id="siteSettings" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="headerSettings.php">Header</a>
-                        <a class="nav-link" href="footerSettings.php">Footer</a>
+                        <a class="nav-link" href="aboutEdit.php">About section</a>
+                        <a class="nav-link" href="contactEdit.php">Contacts</a>
                         <a class="nav-link" href="heroSettings.php">Hero</a>
                     </nav>
                 </div>
@@ -67,7 +68,44 @@
                         <a class="nav-link" href="serviceView.php">View Services</a>
                     </nav>
                 </div>
-
+                <!-- Projects -->
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#projects" aria-expanded="false" aria-controls="projects">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                    Projects
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="projects" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="projectCategoryAdd.php">Add Categorie</a>
+                        <a class="nav-link" href="projectCategoryView.php">View Categories</a>
+                        <a class="nav-link" href="projectAdd.php">Add Project</a>
+                        <a class="nav-link" href="projectView.php">View Project</a>
+                    </nav>
+                </div>
+                <!-- Testimonials -->
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#testimonials" aria-expanded="false" aria-controls="testimonials">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                    Testimonials
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="testimonials" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="testimonialAdd.php">Add Testimonial</a>
+                        <a class="nav-link" href="testimonialView.php">View Testimonial</a>
+                    </nav>
+                </div>
+                <!-- Team -->
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#team" aria-expanded="false" aria-controls="team">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                    Team
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="team" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="teamAdd.php">Add Team</a>
+                        <a class="nav-link" href="teamView.php">View Team</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </nav>

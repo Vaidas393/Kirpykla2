@@ -61,9 +61,19 @@ $total_pages = ceil($total_posts / $limit);
                     // Fetch links (YouTube & Google Drive)
                     $links_query = mysqli_query($con, "SELECT link FROM post_links WHERE post_id = " . $post['id']);
                     while ($link = mysqli_fetch_assoc($links_query)) {
-                        $media_items[] = ["file_path" => $link['link'], "file_type" => "link"];
+                        // If it's a Google Drive link, convert it to embed format
+                        if (strpos($link['link'], 'drive.google.com') !== false) {
+                            if (preg_match('/\/d\/([a-zA-Z0-9_-]+)/', $link['link'], $matches)) {
+                                $driveId = $matches[1];
+                                $embedLink = "https://drive.google.com/file/d/" . $driveId . "/preview";
+                            } else {
+                                $embedLink = $link['link'];
+                            }
+                        } else {
+                            $embedLink = $link['link'];
+                        }
+                        $media_items[] = ["file_path" => $embedLink, "file_type" => "link"];
                     }
-
                     $first_media = $media_items[0] ?? null;
                     $additional_media_count = count($media_items) - 1;
                 ?>

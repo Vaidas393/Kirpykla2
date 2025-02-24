@@ -20,20 +20,20 @@ if (!$post) {
 }
 
 // Fetch media for the post
-$media_query = mysqli_query($con, "SELECT * FROM post_media WHERE post_id = $post_id");
+$media_query = mysqli_query($con, "SELECT * FROM post_media WHERE post_id = " . $post_id);
 $media_items = [];
 while ($media = mysqli_fetch_assoc($media_query)) {
     $media_items[] = $media;
 }
 
 // Fetch YouTube/Google Drive links
-$links_query = mysqli_query($con, "SELECT * FROM post_links WHERE post_id = $post_id");
+$links_query = mysqli_query($con, "SELECT * FROM post_links WHERE post_id = " . $post_id);
 $links = [];
 while ($link = mysqli_fetch_assoc($links_query)) {
     $links[] = $link;
 }
 
-// Categorize media
+// Categorize media into images, videos, and links
 $images = [];
 $videos = [];
 $youtubeLinks = [];
@@ -126,13 +126,16 @@ foreach ($links as $link) {
                                 <h5>YouTube Videos</h5>
                                 <div class="row">
                                     <?php foreach ($youtubeLinks as $youtubeLink) :
+                                        // Extract video ID from the YouTube URL
                                         $videoId = explode("v=", $youtubeLink)[1];
                                         if (strpos($videoId, "&")) {
                                             $videoId = strtok($videoId, '&');
                                         }
                                     ?>
                                         <div class="col-md-12 mb-3">
-                                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?= htmlspecialchars($videoId); ?>" frameborder="0" allowfullscreen></iframe>
+                                            <iframe width="100%" height="315"
+                                                    src="https://www.youtube.com/embed/<?= htmlspecialchars($videoId); ?>"
+                                                    frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
@@ -143,14 +146,23 @@ foreach ($links as $link) {
                             <div class="media-google mt-3">
                                 <h5>Google Drive Videos</h5>
                                 <div class="row">
-                                    <?php foreach ($googleDriveLinks as $googleDriveLink) : ?>
+                                    <?php foreach ($googleDriveLinks as $googleDriveLink) :
+                                        // Convert the Google Drive link to embed format
+                                        $embedLink = $googleDriveLink;
+                                        if (preg_match('/\/d\/([a-zA-Z0-9_-]+)/', $googleDriveLink, $matches)) {
+                                            $driveId = $matches[1];
+                                            $embedLink = "https://drive.google.com/file/d/" . $driveId . "/preview";
+                                        }
+                                    ?>
                                         <div class="col-md-12 mb-3">
-                                            <iframe src="<?= htmlspecialchars($googleDriveLink) ?>" width="100%" height="450" frameborder="0" allow="autoplay"></iframe>
+                                            <iframe src="<?= htmlspecialchars($embedLink); ?>"
+                                                    width="100%" height="450" frameborder="0" allow="autoplay"></iframe>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
                         <?php endif; ?>
+
                     </article>
                 </div>
             </div>
